@@ -1,6 +1,6 @@
 # Architecture and developer notes
 
-`src/witthoft_compare` contains independent core, reporting, config and GUI packages. `python -m witthoft_compare` starts the application; `scripts/launcher.py` is the PyInstaller entry point.
+`src/spreadsheet_compare` contains independent core, reporting, config and GUI packages. `python -m spreadsheet_compare` starts the application; `scripts/launcher.py` is the PyInstaller entry point.
 
 ## Data flow
 

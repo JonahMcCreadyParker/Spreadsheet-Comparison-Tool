@@ -2,7 +2,9 @@
 
 ## Open and import
 
-Open `WitthoftSpreadsheetCompare.exe` from its distribution folder. Keep `_internal` alongside the executable. All spreadsheet data stays local.
+Open `SpreadsheetCompare.exe` from its distribution folder. Keep `_internal` alongside the executable. All spreadsheet data stays local.
+
+The application is named **Spreadsheet Comparison Tool**. The portable executable is now `dist\SpreadsheetCompare\SpreadsheetCompare.exe`; `Launch Spreadsheet Compare.cmd` in the repository root starts it using a relative path. Preferences use the neutral `%LOCALAPPDATA%\SpreadsheetCompare` folder; settings saved under an older application identity are not automatically imported.
 
 The application uses a dark theme throughout the main window, settings, column menu and file-selection dialogs. Green, red and amber result backgrounds distinguish added, removed and modified/review entries, with light text for readability.
 
@@ -49,7 +51,7 @@ Complex addresses such as `S7:[PLC1]DB620,Real48,1` remain intact. No PLC-addres
 
 Defaults preserve differences: no trimming, case-sensitive values/keys, blank cells distinct from empty text, and numeric strings distinct from Excel numbers. In Settings you may enable trimming, case-insensitive matching, blank/empty/whitespace equivalence, and numeric equivalence. Numeric equivalence converts only simple decimal-looking strings without leading zeros: `1` may equal numeric 1, but `001` remains text. Literal `None` and `NaN` are always text, not blanks. Raw values remain visible; enabled normalisation is recorded in reports.
 
-**Save as…** duplicates active dialog settings into a named local profile; press **OK** to commit. Built-in profiles can be reloaded, and **Reset to defaults** resets the selected mode. Preferences live at `%LOCALAPPDATA%\WitthoftEngineering\SpreadsheetCompare\profiles.json`. Malformed preferences fall back safely. Newly imported files cause worksheet and key revalidation. Recheck mappings and keys after changing files or profiles.
+**Save as…** duplicates active dialog settings into a named local profile; press **OK** to commit. Built-in profiles can be reloaded, and **Reset to defaults** resets the selected mode. Preferences live at `%LOCALAPPDATA%\SpreadsheetCompare\profiles.json`. Malformed preferences fall back safely. Newly imported files cause worksheet and key revalidation. Recheck mappings and keys after changing files or profiles.
 
 ## Compare, inspect and export
 

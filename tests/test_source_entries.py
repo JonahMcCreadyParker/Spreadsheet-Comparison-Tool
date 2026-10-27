@@ -4,11 +4,11 @@ import json
 from openpyxl import load_workbook
 from PySide6.QtCore import Qt
 
-from witthoft_compare.core.compare_service import compare
-from witthoft_compare.core.models import ComparisonSettings
-from witthoft_compare.gui.results_model import ATTRIBUTES, ResultsModel
-from witthoft_compare.reporting.csv_report import export_csv
-from witthoft_compare.reporting.excel_report import export_excel
+from spreadsheet_compare.core.compare_service import compare
+from spreadsheet_compare.core.models import ComparisonSettings
+from spreadsheet_compare.gui.results_model import ATTRIBUTES, ResultsModel
+from spreadsheet_compare.reporting.csv_report import export_csv
+from spreadsheet_compare.reporting.excel_report import export_excel
 
 
 def test_reordered_change_exposes_both_rows_and_entries(csv_book, records, tmp_path, app):

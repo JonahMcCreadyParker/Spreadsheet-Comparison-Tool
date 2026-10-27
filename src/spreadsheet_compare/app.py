@@ -7,8 +7,8 @@ from .gui.main_window import MainWindow
 
 def main():
     app = QApplication.instance() or QApplication(sys.argv)
-    app.setApplicationName("Witthoft Spreadsheet Compare")
-    app.setOrganizationName("Witthoft Engineering")
+    app.setApplicationName("Spreadsheet Compare")
+    app.setOrganizationName("Spreadsheet Compare")
     if "--self-test" in sys.argv:
         from .self_test import run_self_test
         index = sys.argv.index("--self-test")

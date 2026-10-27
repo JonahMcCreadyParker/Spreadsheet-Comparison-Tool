@@ -6,7 +6,7 @@
 - Python 3.13.9, PySide6 6.10.2, openpyxl 3.1.5, pytest 8.4.2, PyInstaller 6.16.0. Exact environment: `requirements-lock.txt`.
 - **62 tests passed; 0 failed; 0 skipped.** Latest suite runtime approximately 7 seconds on this machine.
 - A real, windowed, one-folder Windows executable was created and launched successfully on this Windows machine. Its automated GUI self-test completed with exit code 0 and `passed: true`.
-- Executable: `dist\WitthoftSpreadsheetCompare\WitthoftSpreadsheetCompare.exe`.
+- Executable: `dist\SpreadsheetCompare\SpreadsheetCompare.exe`.
 
 ## Test coverage
 

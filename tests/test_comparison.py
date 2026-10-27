@@ -4,9 +4,9 @@ import time
 import pytest
 from openpyxl.styles import Font
 
-from witthoft_compare.core.compare_service import compare
-from witthoft_compare.core.models import ComparisonSettings, MODES, ADMIN_FIELDS, InputError, Cancelled
-from witthoft_compare.core.normalisation import same
+from spreadsheet_compare.core.compare_service import compare
+from spreadsheet_compare.core.models import ComparisonSettings, MODES, ADMIN_FIELDS, InputError, Cancelled
+from spreadsheet_compare.core.normalisation import same
 
 
 def test_equal_and_reordered(csv_book, records):

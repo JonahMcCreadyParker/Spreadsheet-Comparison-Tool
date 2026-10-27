@@ -1,8 +1,8 @@
-# Witthoft Engineering — Spreadsheet Comparison Tool
+# Spreadsheet Comparison Tool
 ## Codex implementation instructions and acceptance specification
 
 **Document status:** Implementation handoff  
-**Project:** Witthoft Engineering Spreadsheet Comparison Tool  
+**Project:** Spreadsheet Comparison Tool
 **Application type:** Offline Windows desktop GUI application  
 **Primary input files:** `.csv`, `.xlsx`  
 **Additional read-only input:** `.xlsm` (desirable; no macro execution)  
@@ -13,7 +13,7 @@
 
 ## 1. Instructions to Codex — read first
 
-You are acting as a software engineer implementing a production-use internal comparison application for Witthoft Engineering. **Build the functioning application, not merely a proposal, mock-up, or pseudocode.**
+You are acting as a software engineer implementing a production-use spreadsheet comparison application. **Build the functioning application, not merely a proposal, mock-up, or pseudocode.**
 
 1. Inspect the current workspace and any repository content before writing or modifying files. Preserve unrelated user files. If the repository already has a meaningful structure, adapt these instructions to it.
 2. Implement an **offline Windows graphical application** that imports two spreadsheets (CSV and/or native Excel), compares them in selectable modes, displays differences, and exports a useful report.
@@ -57,7 +57,7 @@ Use a modern, readable PySide6 layout with responsive resizing, proper tab order
 
 ```text
 +--------------------------------------------------------------------------+
-| WITTHOFT ENGINEERING  |  Spreadsheet Comparison Tool                     |
+| Spreadsheet Comparison Tool                     |
 +--------------------------------------------------------------------------+
 | ORIGINAL (A)                        | REVISED (B)                         |
 | +--------------------------------+  | +--------------------------------+   |
@@ -301,15 +301,15 @@ Printable PDF executive summary, multi-format reports, and saved comparison sess
 Keep the GUI separate from the file-import/compare/export logic so it can be unit tested without a desktop session.
 
 ```text
-witthoft-spreadsheet-compare/
+spreadsheet-compare/
 ├── README.md
 ├── pyproject.toml                   # or requirements.txt with pinned/compatible versions
 ├── requirements-dev.txt
 ├── .gitignore
 ├── src/
-│   └── witthoft_compare/
+│   └── spreadsheet_compare/
 │       ├── __init__.py
-│       ├── __main__.py              # python -m witthoft_compare
+│       ├── __main__.py              # python -m spreadsheet_compare
 │       ├── app.py                   # QApplication / startup
 │       ├── gui/
 │       │   ├── main_window.py
@@ -441,7 +441,7 @@ python -m pip install -e .
 python -m pip install -r requirements-dev.txt
 
 # Start the development application
-python -m witthoft_compare
+python -m spreadsheet_compare
 
 # Run tests
 python -m pytest -q
@@ -453,7 +453,7 @@ python -m pytest -q
 Packaging requirements:
 
 - Use PyInstaller with all required runtime Qt platform plugins and assets. Prefer `--windowed` so no console pops up for engineers.
-- Aim for `dist/WitthoftSpreadsheetCompare/WitthoftSpreadsheetCompare.exe` (one-folder build) as initial reliable output; consider `--onefile` when proven stable.
+- Aim for `dist/SpreadsheetCompare/SpreadsheetCompare.exe` (one-folder build) as initial reliable output; consider `--onefile` when proven stable.
 - Provide a branded name; application icon only if available or separately created. No dependence on a commercial icon pack or online service.
 - Ensure the packaged executable does not require Python installed on the target workstation.
 - Run and verify the executable **on a Windows computer** if access permits; otherwise supply the build script and document this remaining verification item.

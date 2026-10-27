@@ -6,9 +6,9 @@ from PySide6.QtGui import QDragEnterEvent, QDropEvent
 from PySide6.QtTest import QTest
 from PySide6.QtWidgets import QApplication, QFileDialog
 
-from witthoft_compare.core.models import MODES
-from witthoft_compare.gui.main_window import MainWindow
-from witthoft_compare.gui.settings_dialog import SettingsDialog
+from spreadsheet_compare.core.models import MODES
+from spreadsheet_compare.gui.main_window import MainWindow
+from spreadsheet_compare.gui.settings_dialog import SettingsDialog
 
 
 def wait_idle(window, timeout=10000):
@@ -173,7 +173,7 @@ def test_gui_can_clear_engineering_proposed_key(window, csv_book):
 
 
 def test_gui_cancel_worker(window):
-    from witthoft_compare.core.models import checkpoint
+    from spreadsheet_compare.core.models import checkpoint
     def operation(cancel=None, progress=None):
         while not cancel():
             time.sleep(0.001)

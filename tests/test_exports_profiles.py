@@ -5,11 +5,11 @@ import json
 import pytest
 from openpyxl import load_workbook
 
-from witthoft_compare.config.profiles import load_profiles, save_profiles
-from witthoft_compare.core.compare_service import compare
-from witthoft_compare.core.models import ComparisonSettings, Difference, InputError, Cancelled
-from witthoft_compare.reporting.csv_report import export_csv
-from witthoft_compare.reporting.excel_report import export_excel
+from spreadsheet_compare.config.profiles import load_profiles, save_profiles
+from spreadsheet_compare.core.compare_service import compare
+from spreadsheet_compare.core.models import ComparisonSettings, Difference, InputError, Cancelled
+from spreadsheet_compare.reporting.csv_report import export_csv
+from spreadsheet_compare.reporting.excel_report import export_excel
 
 
 def test_exports_inert_and_checksums(csv_book, records, tmp_path):

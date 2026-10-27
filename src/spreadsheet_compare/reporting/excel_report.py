@@ -56,7 +56,7 @@ def export_excel(result, path, *, cancel=None, progress=None):
         return ws
 
     summary = [
-        ("Application", "Witthoft Engineering Spreadsheet Comparison Tool 1.0.0"),
+        ("Application", "Spreadsheet Comparison Tool 1.0.0"),
         ("Original A", str(result.original.path)), ("Revised B", str(result.revised.path)),
         ("Comparison time", result.timestamp), ("Mode", result.settings.mode),
         ("Report scope", "All results, regardless of GUI filters"),

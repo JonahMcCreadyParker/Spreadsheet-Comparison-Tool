@@ -1,7 +1,7 @@
 import pytest
 
-from witthoft_compare.core.import_service import import_file
-from witthoft_compare.core.models import InputError, Cancelled
+from spreadsheet_compare.core.import_service import import_file
+from spreadsheet_compare.core.models import InputError, Cancelled
 
 
 def test_csv_fidelity(csv_book):

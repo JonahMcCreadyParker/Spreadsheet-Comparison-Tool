@@ -7,8 +7,8 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 import pytest
 from openpyxl import Workbook
 
-from witthoft_compare.core.import_service import import_file
-from witthoft_compare.core.models import ComparisonSettings, MODES
+from spreadsheet_compare.core.import_service import import_file
+from spreadsheet_compare.core.models import ComparisonSettings, MODES
 
 
 @pytest.fixture

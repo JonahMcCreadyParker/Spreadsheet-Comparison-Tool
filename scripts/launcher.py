@@ -7,7 +7,7 @@ import traceback
 
 if __name__ == "__main__":
     try:
-        from witthoft_compare.app import main
+        from spreadsheet_compare.app import main
         code = main()
     except Exception:
         message = traceback.format_exc()
@@ -16,7 +16,7 @@ if __name__ == "__main__":
             folder.mkdir(parents=True, exist_ok=True)
             (folder / "self-test.json").write_text(json.dumps({"passed": False, "startup_error": message}, indent=2), encoding="utf-8")
         else:
-            folder = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "WitthoftEngineering" / "SpreadsheetCompare"
+            folder = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "SpreadsheetCompare"
             folder.mkdir(parents=True, exist_ok=True)
             (folder / "startup-error.log").write_text(message, encoding="utf-8")
             from PySide6.QtWidgets import QApplication, QMessageBox

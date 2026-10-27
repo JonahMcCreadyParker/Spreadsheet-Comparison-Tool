@@ -2,9 +2,9 @@ from PySide6.QtCore import QSettings, Qt
 from PySide6.QtTest import QTest
 from PySide6.QtWidgets import QTableView, QToolButton
 
-from witthoft_compare.gui.columns_menu import ColumnsMenu
-from witthoft_compare.gui.main_window import MainWindow
-from witthoft_compare.gui.results_model import ATTRIBUTES, ResultsModel
+from spreadsheet_compare.gui.columns_menu import ColumnsMenu
+from spreadsheet_compare.gui.main_window import MainWindow
+from spreadsheet_compare.gui.results_model import ATTRIBUTES, ResultsModel
 
 
 def test_columns_checkboxes_change_view_and_keep_data(app):

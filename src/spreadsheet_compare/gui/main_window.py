@@ -34,7 +34,7 @@ class MainWindow(QMainWindow):
 
     def __init__(self, *, persist=True):
         super().__init__()
-        self.setWindowTitle("Witthoft Engineering — Spreadsheet Comparison Tool")
+        self.setWindowTitle("Spreadsheet Comparison Tool")
         self.resize(1400, 1000)
         self.setMinimumSize(960, 640)
         apply_dark_theme(QApplication.instance())
@@ -52,7 +52,7 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout(central)
         layout.setContentsMargins(18, 12, 18, 10)
         layout.setSpacing(9)
-        brand = QLabel("WITTHOFT ENGINEERING  /  Spreadsheet Comparison")
+        brand = QLabel("Spreadsheet Comparison Tool")
         brand.setObjectName("brand")
         layout.addWidget(brand)
         self.controls = QWidget()

@@ -1,5 +1,5 @@
-from witthoft_compare.core.compare_service import compare
-from witthoft_compare.core.models import ADMIN_FIELDS, ComparisonSettings, MODES
+from spreadsheet_compare.core.compare_service import compare
+from spreadsheet_compare.core.models import ADMIN_FIELDS, ComparisonSettings, MODES
 
 
 def test_engineering_categories_ignores(csv_book):

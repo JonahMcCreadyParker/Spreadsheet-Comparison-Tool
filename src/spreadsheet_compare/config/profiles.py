@@ -8,7 +8,7 @@ from ..core.models import ComparisonSettings
 
 def config_path():
     base = Path(os.environ.get("LOCALAPPDATA", Path.home() / ".config"))
-    return base / "WitthoftEngineering" / "SpreadsheetCompare" / "profiles.json"
+    return base / "SpreadsheetCompare" / "profiles.json"
 
 
 def load_profiles(path=None):

@@ -4,7 +4,7 @@ Repository: https://github.com/JonahMcCreadyParker/Spreadsheet-Comparison-Tool
 
 ## What must be committed
 
-Commit the source, tests, scripts, dependency files, documentation, `.gitignore`, `.gitattributes`, and **every file under `dist/WitthoftSpreadsheetCompare/`**. The executable requires its adjacent `_internal` folder. That folder includes Python, Qt DLLs/plugins and compiled `.pyd` extension modules. No Python installation is needed to run this portable Windows x64 build on another compatible Windows device.
+Commit the source, tests, scripts, dependency files, documentation, `.gitignore`, `.gitattributes`, and **every file under `dist/SpreadsheetCompare/`**. The executable requires its adjacent `_internal` folder. That folder includes Python, Qt DLLs/plugins and compiled `.pyd` extension modules. No Python installation is needed to run this portable Windows x64 build on another compatible Windows device.
 
 `.gitignore` permits this complete distribution while continuing to exclude `.venv`, `build`, test caches and temporary `artifacts`. The distribution exception deliberately follows `*.py[cod]`, which otherwise also ignores essential `.pyd` files. `.gitattributes` keeps executable/runtime files binary during checkout. Changing ignore rules does not automatically upload anything: files still need to be added, committed and pushed. Already tracked files stay tracked even when an ignore rule matches them.
 
@@ -38,7 +38,7 @@ Review the staged files before committing: the distribution must include `.exe`,
 Clone the repository, or choose **Code → Download ZIP** on GitHub and fully extract it. Open:
 
 ```text
-dist\WitthoftSpreadsheetCompare\WitthoftSpreadsheetCompare.exe
+dist\SpreadsheetCompare\SpreadsheetCompare.exe
 ```
 
 Keep `_internal` alongside the executable. A `.lnk` shortcut from the original computer may contain an absolute path; create a new local shortcut to this executable on the other device. The build is for Windows x64; it is not a macOS/Linux application.

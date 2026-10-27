@@ -1,4 +1,4 @@
-from witthoft_compare.app import main
+from spreadsheet_compare.app import main
 
 if __name__ == "__main__":
     raise SystemExit(main())
