@@ -63,6 +63,8 @@ Summary counts describe unique records or cells. One modified tag with three cha
 
 Click column headings to sort. Search across result columns or filter status, worksheet, field, engineering category and severity. Ctrl+F focuses Search. Export buttons always write **all results**, regardless of filters. Choose a separate writable report filename; original inputs cannot be overwritten. Close an existing report in Excel before replacing it.
 
+Open **Selected Statuses** to check any combination of statuses to display (for example, Added and Modified together). The menu stays open while you check or uncheck statuses. **Select all statuses** restores all rows, and **Clear selection** hides all rows. Every new comparison starts with all available statuses selected. Status choices combine with Search and the other filters; exports continue to include all results.
+
 Use **Columns** above the grid (or right-click a column heading) to check which result columns are visible. The menu stays open so you can change several checkboxes. **Show all columns** restores the full view; at least one column stays visible. Your selection is remembered locally in `view.ini` alongside your profiles and survives new comparisons and restarts. These choices affect the viewing window only: search still includes hidden columns, and Excel/CSV reports retain every output column.
 
 - **Excel:** Summary (settings/counts/interpretation), Differences, Added Records/Removed Records where applicable, Warnings and Structural Changes. Header rows are frozen and filtered; changes are coloured. Long values exceeding Excel's cell text limit are stored in numbered chunks on a Long Text sheet. Imported strings are literal text; no active formulas/hyperlinks are created.

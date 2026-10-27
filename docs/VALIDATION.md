@@ -4,7 +4,7 @@
 
 - Windows 10 x64, build 19045.
 - Python 3.13.9, PySide6 6.10.2, openpyxl 3.1.5, pytest 8.4.2, PyInstaller 6.16.0. Exact environment: `requirements-lock.txt`.
-- **62 tests passed; 0 failed; 0 skipped.** Latest suite runtime approximately 7 seconds on this machine.
+- **64 tests passed; 0 failed; 0 skipped.** Latest suite runtime approximately 9 seconds on this machine.
 - A real, windowed, one-folder Windows executable was created and launched successfully on this Windows machine. Its automated GUI self-test completed with exit code 0 and `passed: true`.
 - Executable: `dist\SpreadsheetCompare\SpreadsheetCompare.exe`.
 
@@ -23,6 +23,8 @@ The scale test compares **12,000 unique records in reverse order** and asserts z
 `tests/test_gui_smoke.py`: actual Qt drag/drop events, Browse path via the file-dialog return, mode/key controls, worker completion, preview diagnostics, result rendering/context, filtering, full export despite a GUI filter, Excel/CSV export via workers, proposed engineering keys, swapping additions/removals, invalid drops, settings mapping, event-loop heartbeats during a 12,000-record import, mixed Excel/CSV worksheet pairing, manually clearing a proposed key and worker cancellation.
 
 ## Packaged executable verification
+
+`tests/test_status_filter.py`: multiple statuses can be checked in the same open menu; clearing every status hides all rows; status selections combine with Search and field filters; a new comparison resets the selection to all available statuses.
 
 The dark UI was visually checked in the comparison window, Settings, Columns menu and Qt file chooser. Result row backgrounds use dark green/red/amber with light foreground text; the rebuilt portable executable runs the same all-mode import/comparison/export smoke check described below. Exported Excel report colours remain suited to documents.
 

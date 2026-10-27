@@ -27,6 +27,7 @@ from .results_model import ResultsFilter, ResultsModel
 from .settings_dialog import SettingsDialog
 from .columns_menu import ColumnsMenu
 from .theme import apply_dark_theme
+from .status_filter import StatusFilter
 
 
 class MainWindow(QMainWindow):
@@ -137,7 +138,10 @@ class MainWindow(QMainWindow):
         self.search.textChanged.connect(self.filter_results)
         filters.addWidget(self.search, 2)
         self.filters = {}
-        for field, label in (("status", "Status"), ("worksheet", "Sheet"), ("field", "Field"), ("category", "Category"), ("severity", "Severity")):
+        self.status_filter = StatusFilter()
+        self.status_filter.selection_changed.connect(self.filter_results)
+        filters.addWidget(self.status_filter, 1)
+        for field, label in (("worksheet", "Sheet"), ("field", "Field"), ("category", "Category"), ("severity", "Severity")):
             combo = QComboBox()
             combo.setMinimumWidth(75)
             combo.setMaximumWidth(180)
@@ -493,12 +497,15 @@ class MainWindow(QMainWindow):
             for value in sorted({getattr(d, field) for d in result.rows}):
                 combo.addItem(value, value)
             combo.blockSignals(False)
+        self.status_filter.set_statuses(d.status for d in result.rows)
         self.filter_results()
         self.status.setText("Comparison complete. Exports include all results, regardless of filters.")
         self.bottom_tabs.setCurrentIndex(0)
 
     def filter_results(self):
-        self.proxy.update(self.search.text(), {field: combo.currentData() or "" for field, combo in self.filters.items()})
+        criteria = {field: combo.currentData() or "" for field, combo in self.filters.items()}
+        criteria["status"] = self.status_filter.selected()
+        self.proxy.update(self.search.text(), criteria)
 
     def show_detail(self, index, previous=None):
         if not index.isValid():

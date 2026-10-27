@@ -57,8 +57,12 @@ class ResultsFilter(QSortFilterProxyModel):
 
     def filterAcceptsRow(self, row, parent):
         d = self.sourceModel().rows[row]
-        if any(value and getattr(d, field) != value for field, value in self.criteria.items()):
-            return False
+        for field, value in self.criteria.items():
+            if isinstance(value, (set, frozenset)):
+                if getattr(d, field) not in value:
+                    return False
+            elif value and getattr(d, field) != value:
+                return False
         return not self.search or any(self.search in display(getattr(d, field)).casefold() for field in ATTRIBUTES)
 
     def update(self, search, criteria):
