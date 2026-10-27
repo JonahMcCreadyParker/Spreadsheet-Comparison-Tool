@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "witthoft-compare"
+version = "1.0.0"
+description = "Offline spreadsheet comparison for Witthoft Engineering"
+requires-python = ">=3.12,<3.14"
+dependencies = ["PySide6==6.10.2", "openpyxl==3.1.5", "pandas==2.3.3", "defusedxml==0.7.1"]
+
+[project.gui-scripts]
+witthoft-compare = "witthoft_compare.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
