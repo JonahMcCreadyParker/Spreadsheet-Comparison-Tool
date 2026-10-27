@@ -4,6 +4,11 @@ __pycache__/
 .pytest_cache/
 *.egg-info/
 build/
-# dist/
 *.spec
 artifacts/
+
+# Keep other build outputs local, but publish the complete portable Windows app.
+# These exceptions must follow *.py[cod]: required runtime .pyd modules match it.
+/dist/*
+!/dist/WitthoftSpreadsheetCompare/
+!/dist/WitthoftSpreadsheetCompare/**

@@ -1,0 +1,8 @@
+# Preserve executable and runtime bytes across Windows checkouts.
+*.exe binary
+*.dll binary
+*.pyd binary
+*.pyc binary
+*.zip binary
+*.png binary
+*.lnk binary

@@ -2,6 +2,8 @@
 
 An offline Windows desktop application for comparing `.csv`, `.xlsx`, and read-only `.xlsm` inputs. The original [implementation handoff](Witthoft_Spreadsheet_Comparison_Tool_Codex_Handoff.md) remains intact.
 
+For committing the complete portable application to GitHub and installing it on another Windows device, see [GitHub deployment instructions](docs/GITHUB_DEPLOYMENT.md).
+
 ## Start the packaged application
 
 Double-click `dist\WitthoftSpreadsheetCompare\WitthoftSpreadsheetCompare.exe`. No terminal, Python installation, network connection, or Excel installation is needed. When copying to another workstation, copy **the entire `WitthoftSpreadsheetCompare` folder**, including `_internal`, rather than just the `.exe`. This is an unsigned portable application, not an installer.
