@@ -6,6 +6,8 @@ For committing the complete portable application to GitHub and installing it on 
 
 ## Start the packaged application
 
+On this checkout, double-click `Spreadsheet Comparison Tool.lnk` in the project folder to launch the application directly. Windows shortcuts use an absolute target path. After cloning elsewhere or moving the folder, recreate it with `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\create_shortcut.ps1`. The existing `Launch Spreadsheet Compare.cmd` launcher also works from any project location.
+
 Double-click `Launch Spreadsheet Compare.cmd` in the project folder, or open `dist\SpreadsheetCompare\SpreadsheetCompare.exe` directly. No terminal, Python installation, network connection, or Excel installation is needed. When copying to another workstation, copy **the entire `SpreadsheetCompare` folder**, including `_internal`, rather than just the `.exe`. This is an unsigned portable application, not an installer.
 
 Drop Original A and Revised B into the two file boxes, select a comparison mode and sheets, choose keys for record modes, and click **Compare**. Filter or search the results and export Excel or CSV. Reports always include all results. See the [engineer user guide](docs/USER_GUIDE.md).
