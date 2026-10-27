@@ -4,6 +4,8 @@
 
 Open `WitthoftSpreadsheetCompare.exe` from its distribution folder. Keep `_internal` alongside the executable. All spreadsheet data stays local.
 
+The application uses a dark theme throughout the main window, settings, column menu and file-selection dialogs. Green, red and amber result backgrounds distinguish added, removed and modified/review entries, with light text for readability.
+
 1. Drop exactly one supported file into **ORIGINAL (A)** and one into **REVISED (B)**, or use each box's **Browse** button. Accepted formats: CSV, XLSX, and XLSM. The application never executes workbook macros or evaluates formulas.
 2. Read the filename, sheet list and notices. Hover over the filename for its full path. Select **Input previews / key diagnostics** below the results to inspect raw input rows and import notices. Imports run in the background; comparison never starts automatically.
 3. For CSV, automatic delimiter detection supports comma, semicolon and tab. Automatic encoding first tries UTF-8 BOM/UTF-8, then Windows cp1252 with a visible warning. If the preview is wrong, choose encoding/delimiter and press **Re-import**. Bad quoting or inconsistent column counts are reported rather than guessed.

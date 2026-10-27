@@ -53,7 +53,7 @@ class DropZone(QFrame):
         layout.addLayout(options)
 
     def choose(self):
-        path, _ = QFileDialog.getOpenFileName(self, "Choose spreadsheet", "", "Spreadsheets (*.csv *.xlsx *.xlsm);;All files (*)")
+        path, _ = QFileDialog.getOpenFileName(self, "Choose spreadsheet", "", "Spreadsheets (*.csv *.xlsx *.xlsm);;All files (*)", options=QFileDialog.Option.DontUseNativeDialog)
         if path:
             self.accept_paths([path])
 

@@ -2,6 +2,7 @@ from PySide6.QtCore import QAbstractTableModel, QModelIndex, Qt, QSortFilterProx
 from PySide6.QtGui import QColor
 
 from ..core.normalisation import display
+from .theme import ROW_COLORS, TEXT
 
 ATTRIBUTES = ("status", "worksheet", "identity", "field", "row_a", "original", "row_b", "revised", "context_a", "context_b", "category", "severity", "notes")
 HEADERS = ("Status", "Worksheet", "Record Key or Cell", "Field", "Original (A) Row", "Original Value", "Revised (B) Row", "Updated Value", "Original Entry (A)", "Updated Entry (B)", "Category", "Severity", "Notes")
@@ -43,7 +44,9 @@ class ResultsModel(QAbstractTableModel):
                 text = str(value) if value is not None else ""
             return text if role == Qt.ItemDataRole.ToolTipRole else text[:2000]
         if role == Qt.ItemDataRole.BackgroundRole:
-            return QColor({"Added": "#e2f0d9", "Removed": "#fce4d6", "Modified": "#fff2cc", "Ambiguous": "#fff2cc", "Check": "#fff2cc"}.get(d.status, "#f4f7fa"))
+            return QColor(ROW_COLORS.get(d.status, "#1b2634"))
+        if role == Qt.ItemDataRole.ForegroundRole:
+            return QColor(TEXT)
 
 
 class ResultsFilter(QSortFilterProxyModel):

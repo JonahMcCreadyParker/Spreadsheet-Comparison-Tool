@@ -5,7 +5,7 @@ import json
 from PySide6.QtCore import Qt, Signal, QSettings
 from PySide6.QtGui import QKeySequence, QShortcut
 from PySide6.QtWidgets import (
-    QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QComboBox,
+    QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QComboBox,
     QCheckBox, QListWidget, QListWidgetItem, QAbstractItemView, QTableView,
     QSplitter, QPlainTextEdit, QProgressBar, QLineEdit, QFileDialog, QMessageBox,
     QTableWidget, QTableWidgetItem, QTabWidget, QDialog, QHeaderView, QScrollArea, QToolButton,
@@ -26,24 +26,7 @@ from .drop_zone import DropZone
 from .results_model import ResultsFilter, ResultsModel
 from .settings_dialog import SettingsDialog
 from .columns_menu import ColumnsMenu
-
-
-STYLE = """
-QMainWindow, QDialog { background: #f2f5f7; }
-QWidget { font-family: 'Segoe UI'; font-size: 10pt; color: #203746; }
-QFrame#dropZone { background: white; border: 2px dashed #7998aa; border-radius: 9px; }
-QLabel#brand { font-size: 19pt; font-weight: 700; color: #153d54; padding: 5px 0; }
-QLabel#zoneTitle { font-weight: 700; color: #245c78; }
-QPushButton { padding: 6px 13px; border: 1px solid #a9bdc8; border-radius: 4px; background: white; }
-QPushButton:hover { background: #e4eff5; }
-QPushButton:disabled { color: #8797a1; background: #edf1f4; }
-QPushButton#primary { background: #176080; color: white; font-weight: 700; }
-QPushButton#primary:disabled { background: #93aeb9; }
-QComboBox, QLineEdit, QPlainTextEdit, QListWidget, QTableView { background: white; }
-QComboBox, QLineEdit { padding: 4px; }
-QHeaderView::section { background: #dfe9ef; padding: 5px; border: 0; }
-QToolTip { background: white; color: #203746; }
-"""
+from .theme import apply_dark_theme
 
 
 class MainWindow(QMainWindow):
@@ -54,7 +37,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Witthoft Engineering — Spreadsheet Comparison Tool")
         self.resize(1400, 1000)
         self.setMinimumSize(960, 640)
-        self.setStyleSheet(STYLE)
+        apply_dark_theme(QApplication.instance())
         self.persist = persist
         self.profiles, self.settings = load_profiles() if persist else ({}, ComparisonSettings())
         # Sheet selections and keys are validated against every newly loaded pair.
@@ -527,7 +510,7 @@ class MainWindow(QMainWindow):
     def choose_export(self, extension):
         if not self.result:
             return
-        path, _ = QFileDialog.getSaveFileName(self, "Export all results (GUI filters do not restrict report)", suggested_name(self.result, extension), f"Report (*.{extension})")
+        path, _ = QFileDialog.getSaveFileName(self, "Export all results (GUI filters do not restrict report)", suggested_name(self.result, extension), f"Report (*.{extension})", options=QFileDialog.Option.DontUseNativeDialog)
         if path:
             if not Path(path).suffix:
                 path += "." + extension
